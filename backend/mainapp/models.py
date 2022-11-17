@@ -49,5 +49,22 @@ class Customer(BaseModel):
         return f'{self.customer_name} - {self.email}'
 
     class Meta:
-        verbose_name_plural = "Клиенты"
-        verbose_name = "Клиент"
+        verbose_name_plural = "Запросы с сайта"
+        verbose_name = "Запрос с сайта"
+
+
+class Material(models.Model):
+    title = models.CharField(max_length=64, verbose_name="Имя файла")
+    description = models.CharField(
+        max_length=128, verbose_name="Описание файла")
+    for_clients = models.BooleanField(
+        default=False, verbose_name="Только для клиентов")
+    file_name = models.FileField(
+        upload_to='uploads/', verbose_name="Файл pdf")
+
+    class Meta:
+        verbose_name = "Полезный материал"
+        verbose_name_plural = "Полезные материалы"
+
+    def __str__(self) -> str:
+        return self.title
