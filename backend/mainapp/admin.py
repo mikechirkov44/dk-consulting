@@ -1,13 +1,13 @@
 from django.utils.translation import ngettext
 from django.contrib import admin, messages
-from .models import Customer, Material
+from .models import Customer, Material, User
 
 
 @admin.register(Customer)
 class CustomerAdmin(admin.ModelAdmin):
     actions = ['move_to_archive']
     list_display = ('pk', 'customer_name', 'phone_number',
-                    'request_type', 'email', 'is_contacted',)
+                    'request_type', 'email', 'is_contacted', 'created_at')
     list_filter = ('is_contacted',)
     search_fields = ('email', 'customer_name',)
     list_per_page = 10
@@ -30,6 +30,11 @@ class MaterialAdmin(admin.ModelAdmin):
     list_filter = ('for_clients',)
     search_fields = ('title',)
     list_per_page = 10
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'email', 'password', 'is_active', 'date_joined')
 
 
 admin.site.site_title = 'DK-CONSULTING ADMIN'

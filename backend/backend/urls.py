@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework.routers import DefaultRouter
-from mainapp.views import MaterialModelViewSet, CustomerModelViewSet
+from rest_framework.authtoken import views
+from mainapp.views import MaterialModelViewSet, CustomerModelViewSet, RegistrUserView
 
 router = DefaultRouter()
 router.register("customers", CustomerModelViewSet)
@@ -28,5 +29,6 @@ urlpatterns = [
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
     path('auth/', include('djoser.urls')),
-
+    path('api-token-auth/', views.obtain_auth_token),
+    path('registr/', RegistrUserView.as_view(), name='registr')
 ]

@@ -11,7 +11,6 @@ class CustomerModelFilter(filters.FilterSet):
 
 
 class MaterialModelFilter(filters.FilterSet):
-
     class Meta:
         model = Material
         fields = ["for_clients", ]
