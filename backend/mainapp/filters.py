@@ -7,11 +7,10 @@ class CustomerModelFilter(filters.FilterSet):
 
     class Meta:
         model = Customer
-        fields = ["request_type", "is_contacted"]
+        fields = ["request_type", "is_contacted", ]
 
 
 class MaterialModelFilter(filters.FilterSet):
-
     class Meta:
         model = Material
         fields = ["for_clients", ]
