@@ -53,6 +53,7 @@ class Customer(BaseModel):
     class Meta:
         verbose_name_plural = "Запросы с сайта"
         verbose_name = "Запрос с сайта"
+        ordering = ['-created_at', ]
 
 
 class Material(models.Model):
