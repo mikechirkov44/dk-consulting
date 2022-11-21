@@ -14,7 +14,7 @@ class CustomerAdmin(admin.ModelAdmin):
     actions = ['move_to_archive']
     list_display = ('pk', 'customer_name', 'phone_number',
                     'request_type', 'email', 'is_contacted', 'created_at')
-    list_filter = ('is_contacted',)
+    list_filter = ('is_contacted', 'request_type')
     search_fields = ('email', 'customer_name',)
     list_per_page = 10
 
@@ -74,12 +74,15 @@ class MaterialAdmin(admin.ModelAdmin):
     list_display = ('pk', 'title', 'description', 'for_clients')
     list_filter = ('for_clients',)
     search_fields = ('title',)
-    list_per_page = 10
+    list_per_page = 15
 
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'email', 'password', 'is_active', 'date_joined')
+    list_display = ('id', 'username', 'email', 'is_client',
+                    'is_active', 'date_joined')
+    list_filter = ('is_client', 'is_active', 'date_joined')
+    list_per_page = 15
 
 
 admin.site.site_title = 'DK-CONSULTING ADMIN'

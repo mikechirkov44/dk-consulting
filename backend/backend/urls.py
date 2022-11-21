@@ -45,7 +45,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
-    path('auth/', include('djoser.urls')),
+    # path('auth/', include('djoser.urls')),
     path('api-token-auth/', views.obtain_auth_token),
     path('registr/', RegistrUserView.as_view(), name='registr'),
     path('swagger/', schema_view.with_ui('swagger',
