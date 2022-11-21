@@ -39,10 +39,10 @@ class Customer(BaseModel):
     phoneNumberRegex = RegexValidator(
         regex=r"^((8|\+7)[\- ]?)?(\(?\d{4}\)?[\- ]?)?[\d\- ]{7,10}$")
     phone_number = models.CharField(
-        validators=[phoneNumberRegex], max_length=16, unique=True, verbose_name="Номер телефона")
+        validators=[phoneNumberRegex], max_length=16, unique=False, verbose_name="Номер телефона")
 
     # Email
-    email = models.EmailField(unique=True, blank=True, verbose_name="Email")
+    email = models.EmailField(unique=False, blank=True, verbose_name="Email")
     comment = models.TextField(verbose_name="Текст запроса")
     is_contacted = models.BooleanField(
         default=False, verbose_name="Контакт состоялся")

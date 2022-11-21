@@ -15,7 +15,7 @@ class CustomerModelSerializer(serializers.ModelSerializer):
             'Новый запрос с сайта под номером {} получен'.format(customer.pk),
             'Содержание запроса: {}'.format(validated_data),
             'ya.mikechirkov@yandex.ru',
-            ['ya.mikechirkov@yandex.ru', 'ya.mikechirkov@yandex.ru'],
+            ['ya.mikechirkov@yandex.ru', ],
             fail_silently=False,
         )
         return customer
@@ -64,5 +64,13 @@ class UserRegistrSerializer(serializers.ModelSerializer):
         user.set_password(password)
         # Сохраняем пользователя
         user.save()
+        send_mail(
+            'Регистрация на сайте dk-consulting.ru',
+            'Вы успешно зарегистрировались на сайте, имя пользователя: {}, email: {}'.format(
+                user.username, user.email),
+            'ya.mikechirkov@yandex.ru',
+            [{user.email}, ],
+            fail_silently=False,
+        )
         # Возвращаем нового пользователя
         return user
