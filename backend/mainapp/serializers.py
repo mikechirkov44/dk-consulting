@@ -1,12 +1,24 @@
 from .models import User
 from rest_framework import serializers
 from .models import Customer, Material
+from django.core.mail import send_mail
 
 
 class CustomerModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         exclude = ['is_contacted', ]
+
+    def create(self, validated_data):
+        customer = Customer.objects.create(**validated_data)
+        send_mail(
+            'Новый запрос с сайта под номером {} получен'.format(customer.pk),
+            'Содержание запроса: {}'.format(validated_data),
+            'ya.mikechirkov@yandex.ru',
+            ['ya.mikechirkov@yandex.ru', 'ya.mikechirkov@yandex.ru'],
+            fail_silently=False,
+        )
+        return customer
 
 
 class MaterialModelSerializer(serializers.ModelSerializer):
@@ -16,12 +28,6 @@ class MaterialModelSerializer(serializers.ModelSerializer):
 
 
 class MaterialModelClientsSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Material
-        fields = "__all__"
-
-
-class MaterialClientsModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Material
         fields = "__all__"
