@@ -64,6 +64,7 @@ class UserRegistrSerializer(serializers.ModelSerializer):
         user.set_password(password)
         # Сохраняем пользователя
         user.save()
+        # Отправка уведомления пользователю
         send_mail(
             'Регистрация на сайте dk-consulting.ru',
             'Вы успешно зарегистрировались на сайте, имя пользователя: {}, email: {}'.format(
