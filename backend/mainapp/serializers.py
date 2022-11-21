@@ -15,6 +15,12 @@ class MaterialModelSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class MaterialModelClientsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Material
+        fields = "__all__"
+
+
 class MaterialClientsModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Material

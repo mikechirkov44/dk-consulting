@@ -1,8 +1,9 @@
 from rest_framework import status
 from rest_framework.generics import CreateAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+from django_filters.rest_framework import DjangoFilterBackend
 
 from .filters import CustomerModelFilter, MaterialModelFilter
 from .models import Customer, Material, User
@@ -11,6 +12,7 @@ from .serializers import (CustomerModelSerializer, MaterialModelSerializer,
 
 
 class CustomerModelViewSet(ModelViewSet):
+    permission_classes = [IsAdminUser]
     queryset = Customer.objects.all()
     serializer_class = CustomerModelSerializer
     filterset_class = CustomerModelFilter
@@ -21,9 +23,19 @@ class MaterialModelViewSet(ModelViewSet):
     queryset = Material.objects.all()
     serializer_class = MaterialModelSerializer
     filterset_class = MaterialModelFilter
+    filter_backends = (DjangoFilterBackend,)
+
+    if User.objects.filter(is_client=True):
+        def get_queryset(self):
+            return super().get_queryset().all()
+    else:
+        def get_queryset(self):
+            return super().get_queryset().filter(for_clients=False)
 
 
 # Создаём класс RegistrUserView
+
+
 class RegistrUserView(CreateAPIView):
     # Добавляем в queryset
     queryset = User.objects.all()

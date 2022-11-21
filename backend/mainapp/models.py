@@ -121,6 +121,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)  # Статус админа
     date_joined = models.DateTimeField(
         verbose_name="Дата регистрации", auto_now_add=True)
+    is_client = models.BooleanField(
+        default=False, verbose_name="Статус клиента")
 
     USERNAME_FIELD = 'email'  # Идентификатор для обращения
     REQUIRED_FIELDS = ['username']  # Список имён полей для Superuser
