@@ -32,8 +32,7 @@ class MaterialModelViewSet(ModelViewSet):
         def get_queryset(self):
             return super().get_queryset().filter(for_clients=False)
 
-
-# Создаём класс RegistrUserView
+    # Создаём класс RegistrUserView
 
 
 class RegistrUserView(CreateAPIView):

@@ -122,12 +122,12 @@ class User(AbstractBaseUser, PermissionsMixin):
         max_length=50, unique=True, verbose_name="Имя пользователя")  # Логин
     email = models.EmailField(max_length=100, unique=True)  # Email
     is_active = models.BooleanField(
-        default=True, verbose_name="Активный")  # Статус активации
+        default=True, verbose_name="АКТИВНЫЙ")  # Статус активации
     is_staff = models.BooleanField(default=False)  # Статус админа
     date_joined = models.DateTimeField(
         verbose_name="Дата регистрации", auto_now_add=True)
     is_client = models.BooleanField(
-        default=False, verbose_name="Статус клиента")
+        default=False, verbose_name="СТАТУС КЛИЕНТА")
 
     USERNAME_FIELD = 'email'  # Идентификатор для обращения
     REQUIRED_FIELDS = ['username']  # Список имён полей для Superuser

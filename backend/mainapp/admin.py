@@ -14,8 +14,9 @@ class CustomerAdmin(admin.ModelAdmin):
     actions = ['move_to_archive']
     list_display = ('pk', 'customer_name', 'phone_number',
                     'request_type', 'email', 'is_contacted', 'created_at')
-    list_filter = ('is_contacted', 'request_type')
+    list_filter = ('is_contacted', 'request_type', 'created_at')
     search_fields = ('email', 'customer_name',)
+    date_hierarchy = ('created_at')
     list_per_page = 10
 
     def changelist_view(self, request, extra_context=None):
