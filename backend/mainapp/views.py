@@ -26,12 +26,12 @@ class MaterialModelViewSet(ModelViewSet):
     filter_backends = (DjangoFilterBackend,)
 
     def get_queryset(self):
-        if User.objects.filter(is_client=True):
-            queryset = Material.objects.all()
-            return queryset
+        queryset = super().get_queryset()
+        if self.request.user.is_client:
+            queryset = queryset.all()
         else:
-            queryset = Material.objects.filter(for_clients=False)
-            return queryset
+            queryset = queryset.filter(for_clients=False)
+        return queryset
 
     # Создаём класс RegistrUserView
 
