@@ -130,7 +130,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         default=False, verbose_name="СТАТУС КЛИЕНТА")
 
     USERNAME_FIELD = 'email'  # Идентификатор для обращения
-    REQUIRED_FIELDS = ['username']  # Список имён полей для Superuser
+    # REQUIRED_FIELDS = ['username']  # Список имён полей для Superuser
 
     objects = MyUserManager()  # Добавляем методы класса MyUserManager
 
@@ -146,16 +146,17 @@ class User(AbstractBaseUser, PermissionsMixin):
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
 
-    email_plaintext_message = "{}?token={}".format(
-        reverse('password_reset:reset-password-request'), reset_password_token.key)
+    reset_password_url = "Для сброса пароля перейдите по следующей ссылке: http://localhost:3000{}{}{}".format(
+        reverse('password_reset:reset-password-request'), ('confirm/'), reset_password_token.key)
 
     send_mail(
         # title:
         "Password Reset for {title}".format(title="DK-Consulting"),
         # message:
-        email_plaintext_message,
+        reset_password_url,
         # from:
         "ya.mikechirkov@yandex.ru",
         # to:
         [reset_password_token.user.email]
+
     )
