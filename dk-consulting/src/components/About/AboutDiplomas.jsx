@@ -6,9 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
 
-// import required modules
-import { EffectCards } from "swiper";
-
 import diplom1 from "../../assets/About/diplom1.jpg";
 import diplom2 from "../../assets/About/diplom2.jpg";
 import diplom3 from "../../assets/About/diplom3.jpg";
@@ -22,13 +19,25 @@ import { DiplomasPrevButton } from "../UI/DiplomasPrevBtn";
 
 
 export const AboutDiplomas = () => {
+
+    const [defaultPageWidth, setDefaultPageWidth] = React.useState(window.innerWidth);
+    const bp = 1023;
+    React.useEffect(() => {
+        const windowResizer = () => setDefaultPageWidth(window.innerWidth);
+        window.addEventListener("resize", windowResizer);
+        return () => {
+            window.removeEventListener("resize", windowResizer);
+        };
+    }, []);
+
     return (
-        <section className="pb-10">
+        <section className="pb-10 w-full relative h-auto max-w-[1290px] mx-auto lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px]">
             <Swiper
-                effect={"cards"}
+                slidesPerView={defaultPageWidth > bp ? 2 : 1}
+                spaceBetween={42}
+                loop={true}
                 grabCursor={true}
-                modules={[EffectCards]}
-                className="w-[500px] relative h-auto sm:w-80 xs:w-60"
+                className="px-10"
             >
                 <DiplomasPrevButton/>
                 <SwiperSlide>

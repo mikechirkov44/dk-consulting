@@ -15,19 +15,19 @@ export const FormComponent = React.forwardRef((props, forwardedRef) => {
             >
                 <ul className="flex justify-between items-center text-[#5A5656] w-[100%] mb-[32px] flex-wrap md:space-y-2 md:mb-5 sm:space-y-2 sm:mb-5 xs:flex-col xs:items-start xs:space-y-2">
                     <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                        <input type="checkbox" id="audit" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                        <input type="radio" name="problem" value="audit" id="audit" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                         <label htmlFor="audit" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Аудит</label>
                     </li>
                     <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                        <input type="checkbox" id="consult" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                        <input type="radio" name="problem" value="consult" id="consult" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                         <label htmlFor="consult" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Промышленный консалтинг</label>
                     </li>
                     <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                        <input type="checkbox" id="organize" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                        <input type="radio" name="problem" value="organize" id="organize" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                         <label htmlFor="organize" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Организация производства</label>
                     </li>
                     <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                        <input type="checkbox" id="teach" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                        <input type="radio" name="problem" value="teach" id="teach" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                         <label htmlFor="teach" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Обучение</label>
                     </li>
                 </ul>
@@ -61,19 +61,19 @@ export const FormComponent = React.forwardRef((props, forwardedRef) => {
                         <div> <p className="text-[#4D8BBE] text-[26px] leading-[36px] font-normal md:text-lg sm:text-sm xs:text-sm" >Как вы узнали о нас?</p></div>
                         <ul className="flex justify-between items-center text-[#5A5656] w-[100%] mt-[15px] flex-wrap md:space-y-2 xs:flex-col xs:items-start xs:space-y-2">
                             <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                                <input type="checkbox" id="social"  className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                                <input type="radio" name="reference" id="social" value="social"  className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                                 <label htmlFor="social" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Социальные сети</label>
                             </li>
                             <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                                <input type="checkbox" id="internet" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                                <input type="radio" name="reference" id="internet" value="internet" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                                 <label htmlFor="internet" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Поиск в интернет</label>
                             </li>
                             <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                                <input type="checkbox" id="friends" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                                <input type="radio" name="reference" id="friends" value="friends" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                                 <label htmlFor="friends" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">От знакомых</label>
                             </li>
                             <li className="flex items-center md:w-[50%] sm:w-[50%]">
-                                <input type="checkbox" id="other" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
+                                <input type="radio" name="reference" id="other" value="other" className="w-7 h-7 lg:w-6 lg:h-6 md:h-5 md:w-5 sm:h-4 sm:w-4 xs:h-4 xs:w-4"/>
                                 <label htmlFor="other" className="font-light text-[22px] leading-[30px] ml-[10px] md:text-lg sm:text-sm sm:ml-1 xs:text-sm xs:ml-1">Другой источник</label>
                             </li>
                         </ul>

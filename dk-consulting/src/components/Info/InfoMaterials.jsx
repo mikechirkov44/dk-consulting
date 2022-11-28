@@ -1,6 +1,17 @@
+import {useEffect} from "react";
+import articlesService from "../../services/articlesService";
 
 
 export const InfoMaterials = () => {
+
+    //localStorage.clear()
+
+    useEffect(()=>{
+        articlesService.getArticles().then( (res) => {
+            console.log(res)
+        }).catch(err => {
+            console.log(err)})
+    },[])
 
     const themes = [
         {

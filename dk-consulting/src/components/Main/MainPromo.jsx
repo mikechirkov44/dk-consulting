@@ -31,7 +31,7 @@ export default function MainPromo() {
                             <ul>
                                 <li className="mb-[42px] lg:mb-[20px]">
                                     <p className="text-[60px] leading-[84px] text-blue font-light lg:text-[50px] lg:leading-[70px] md:text-[50px] md:leading-[70px]">
-                                        <CountUp end={35}></CountUp>%
+                                        <CountUp end={75}></CountUp>%
                                     </p>
                                     <p className="text-[22px] leading-[23px] text-white font-normal lg:text-[18px] lg:leading-[18px]  md:text-[18px] md:leading-[18px]">Увеличение производительности</p>
                                 </li>
@@ -39,7 +39,7 @@ export default function MainPromo() {
                                     <p className="text-[60px] leading-[84px] text-blue font-light lg:text-[50px] lg:leading-[70px] md:text-[50px] md:leading-[70px]">
                                         <CountUp end={37}></CountUp>%    
                                     </p>
-                                    <p className="text-[22px] leading-[23px] text-white font-normal lg:text-[18px] lg:leading-[18px]  md:text-[18px] md:leading-[18px]">Увеличение производительности</p>
+                                    <p className="text-[22px] leading-[23px] text-white font-normal lg:text-[18px] lg:leading-[18px]  md:text-[18px] md:leading-[18px]">Снижение себестоимости</p>
                                 </li>
                                 <li>
                                     <p className="text-[60px] leading-[84px] text-blue font-light lg:text-[50px] lg:leading-[70px] md:text-[50px] md:leading-[70px]">

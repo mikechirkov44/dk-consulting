@@ -5,8 +5,8 @@ export default function Header() {
     return(
         <section className="h-[70px] bg-[#40454E] fixed top-0 w-full z-[100] lg:h-[87px] md:h-[87px]">
             <div className="flex flex-row justify-between items-center max-w-[1290px] mx-auto py-[17px] lg:max-w-[940px] lg:py-[12px] md:max-w-[690px] md:py-3">
-                <NavLink to="/" className="mr-[46px] lg:mr-[35px] md:mr-[9px] md:min-w-[116px]">
-                    <img src={hlogo} alt="logo" className="lg:w-[227px] md:w-[116px]"/>
+                <NavLink to="/" className="min-w-[max-content] mr-[46px] lg:mr-[35px] md:mr-[9px] md:min-w-[116px]">
+                    <img src={hlogo} alt="logo" className="w-[198px] lg:w-[227px] md:w-[116px]"/>
                 </NavLink>
                 <nav className="flex flex-row justify-between items-center px-[46px] border-x-[1px] border-white h-full w-full lg:px-[36px] lg:py-5 md:px-[5px] md:py-4">
                     <NavLink to="/about">

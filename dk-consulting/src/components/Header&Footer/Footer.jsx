@@ -37,7 +37,7 @@ export default function Footer() {
                                 <ellipse className="group-hover:fill-darkblue" cx="13.9009" cy="13.9999" rx="13.4917" ry="13.5" fill="#4D8BBE"/>
                                 <path fillRule="evenodd" clipRule="evenodd" d="M7.81934 10.8792C7.81934 9.93129 8.58732 9.16284 9.53467 9.16284H18.2673C19.2147 9.16284 19.9826 9.9313 19.9826 10.8792V17.1206C19.9826 18.0686 19.2147 18.837 18.2673 18.837H9.53467C8.58732 18.837 7.81934 18.0686 7.81934 17.1206V10.8792ZM9.17041 10.9058C8.95544 10.7624 8.66498 10.8206 8.52166 11.0357C8.37835 11.2508 8.43644 11.5414 8.65141 11.6848L12.9495 14.552C13.5257 14.9363 14.2763 14.9363 14.8525 14.552L19.1506 11.6848C19.3655 11.5414 19.4236 11.2508 19.2803 11.0357C19.137 10.8206 18.8465 10.7624 18.6316 10.9058L14.3335 13.773C14.0716 13.9477 13.7304 13.9477 13.4685 13.773L9.17041 10.9058Z" fill="white"/>
                             </svg>
-                            <p className="text-[16px] leading-[21px] text-white ml-[10px] font-light sm:text-[10px] sm:leading-[13px] sm:ml-[5px] xs:text-[10px] xs:leading-[13px] xs:ml-[5px]"> dk-consult@????.com</p>
+                            <p className="text-[16px] leading-[21px] text-white ml-[10px] font-light sm:text-[10px] sm:leading-[13px] sm:ml-[5px] xs:text-[10px] xs:leading-[13px] xs:ml-[5px]">info@dk-consult.ru</p>
                         </a>
                 </div>
                 <nav className="ml-[80px] w-[370px] items-start relative md:ml-4 md:w-[290px] sm:w-[40%] sm:ml-0 sm:h-full xs:w-[40%] xs:ml-0 xs:h-full sm:pl-[26px] sm:border-l-[1px] border-white xs:pl-[26px] xs:border-l-[1px]">

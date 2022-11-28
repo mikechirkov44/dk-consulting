@@ -42,7 +42,7 @@ export const HeaderBurger = () => {
                 } right-0 transition-all duration-200`}
             >
                 <div className="bg-grey w-full py-[64px] z-[150] relative">
-                    <nav className="flex flex-col justify-between items-center pt-[46px] border-x-[1px] border-white h-full w-full gap-[10px]">
+                    <nav className="flex flex-col justify-between items-center pt-[46px] border-white h-full w-full gap-[10px]">
                         <NavLink to="/about" 
                             onClick={() => {
                                 setIsOpen(!isOpen);

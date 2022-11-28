@@ -23,8 +23,9 @@ export default function Login(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        authService.login({ password: password, username: name,}).then((res) => {
-            console.log(res)
+        authService.login({ password: password, username: email,}).then((res) => {
+            console.log(res.token)
+            localStorage.setItem("jwt", res.token);
         }).catch(err => {
             console.log(err)
         })
@@ -52,7 +53,6 @@ export default function Login(props) {
 
                         <form className="flex flex-col w-full items-center max-w-[710px] lg:max-w-[515px] md:max-w-[515px] sm:max-w-[320px]" onSubmit={handleSubmit}>
                             <div className="flex flex-col w-full items-center max-w-[710px]  py-4 space-y-4 lg:max-w-[515px] md:max-w-[515px] sm:max-w-[320px]">
-                                <input type="name" id="namel" value={name || ""} onChange={handleNicknameChange} placeholder="имя" className="w-[100%] bg-[#0A0B22] border-b-[1px] bo text-[#40454E] font-light text-[22px] leading-[16px] p-3 lg:text-lg md:text-lg sm:text-base xs:text-base"/>
                                 <input type="name" id="emaill" value={email} onChange={handleEmailChange} placeholder="E-mail" className="w-[100%] bg-[#0A0B22] border-b-[1px] bo text-[#40454E] font-light text-[22px] leading-[16px] p-3 lg:text-lg md:text-lg sm:text-base xs:text-base"/>
                                 <input type="name" id="passwordl" value={password} onChange={handlePasswordChange} placeholder="Пароль" className="w-[100%] bg-[#0A0B22] border-b-[1px] bo text-[#40454E] font-light text-[22px] leading-[16px] p-3 lg:text-lg md:text-lg sm:text-base xs:text-base"/>
                                 <div className="flex items-center w-full border-b-[1px] p-3">
