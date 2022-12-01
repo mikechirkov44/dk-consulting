@@ -1,7 +1,7 @@
 import {Swiper, SwiperSlide} from "swiper/react";
 import { SlideNextButton } from "../UI/slideNextButton";
 
-export const FourSteps = () => {
+export const FourStepsMob = () => {
     
     return (
         <section className="h-[350px] sm:h-[256px]  xs:h-[256px] mx-auto ">
@@ -50,6 +50,23 @@ export const FourSteps = () => {
                     </div>
 
                 </SwiperSlide>
+                <SwiperSlide className="hidden md:block sm:block xs:block w-[100%]">
+                    <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
+                        <div className="pr-[65px] w-full h-full mx-auto text-white text-xl font-light flex justify-between items-center max-w-[1290px] lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px] relative lg:text-lg sm:text-base xs:text-xs sm:pr-8 xs:pr-8">
+                            <ul>
+                                <li>&bull; Техническое состояние производства</li>
+                                <li>&bull; Конструкторско-технологическая документация</li>
+                                <li>&bull; Бизнес-процессы in/out (поставщики, сервис)</li>
+                                <li>&bull; Процессы проектного управления, управления инновациями</li>
+                                <li>&bull; Система управления качеством</li>
+                                <li>&bull; Организационная система, система мотивации</li>
+                                <li>&bull; Оценка финансовой модели, экономических показателей</li>
+                                <li>&bull; Анализ издержек, оценка себестоимости</li>
+                            </ul>
+                            <SlideNextButton/>
+                        </div>
+                    </div>
+                </SwiperSlide>
                 <SwiperSlide>
                     <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
                         <div className="pr-[65px] w-full h-full mx-auto text-white text-xl font-light flex justify-between items-center max-w-[1290px] lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px] relative lg:text-lg sm:text-base xs:text-xs sm:pr-9 xs:pr-9">
@@ -75,6 +92,20 @@ export const FourSteps = () => {
                         </div>
                     </div>
 
+                </SwiperSlide>
+                <SwiperSlide className="hidden md:block sm:block xs:block w-[100%]">
+                    <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
+                        <div className="pr-[65px] w-full h-full mx-auto text-white text-xl font-light flex justify-between items-center max-w-[1290px] lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px] relative lg:text-lg sm:text-base xs:text-xs sm:pr-8 xs:pr-8">
+                            <ul>
+                                <li>&bull; Фондовый потенциал</li>
+                                <li>&bull; Финансовый потенциал</li>
+                                <li>&bull; Управленческий потенциал</li>
+                                <li>&bull; Кадровый потенциал</li>
+                                <li>&bull; Инновационный потенциал</li>
+                            </ul>
+                            <SlideNextButton/>
+                        </div>
+                    </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
@@ -104,6 +135,22 @@ export const FourSteps = () => {
                     </div>
 
                 </SwiperSlide>
+                <SwiperSlide className="hidden md:block sm:block xs:block w-[100%]">
+                    <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
+                        <div className="pr-[65px] w-full h-full mx-auto text-white text-xl font-light flex justify-between items-center max-w-[1290px] lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px] relative lg:text-lg sm:text-base xs:text-xs sm:pr-8 xs:pr-8">
+                            <ul>
+                                <li>&bull; Увеличение прибыли, повышение рентабельности</li>
+                                <li>&bull; Увеличение производительности</li>
+                                <li>&bull; Повышение качества продукции/ сервиса</li>
+                                <li>&bull; Снижение цикла разработки продукта</li>
+                                <li>&bull; Диверсификация ассортимента</li>
+                                <li>&bull; Диверсификация ассортимента</li>
+                                <li>&bull; Снижение цикла производства/ увеличение оборачиваемости</li>
+                            </ul>
+                            <SlideNextButton/>
+                        </div>
+                    </div>
+                </SwiperSlide>
                 <SwiperSlide>
                     <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
                         <div className="pr-[65px] w-full h-full mx-auto text-white text-xl font-light flex justify-between items-center max-w-[1290px] lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px] relative lg:text-lg sm:text-base xs:text-xs sm:pr-9 xs:pr-9">
@@ -130,6 +177,21 @@ export const FourSteps = () => {
                         </div>
                     </div>
 
+                </SwiperSlide>
+                <SwiperSlide className="hidden md:block sm:block xs:block w-[100%]">
+                    <div className="bg-slide1 bg-no-repeat bg-cover bg-bottom w-full h-full">
+                        <div className="pr-[65px] w-full h-full mx-auto text-white text-xl font-light flex justify-between items-center max-w-[1290px] lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] xs:max-w-[290px] relative lg:text-lg sm:text-base xs:text-xs sm:pr-8 xs:pr-8">
+                            <ul>
+                                <li>&bull; Внедрение инструментов lean production</li>
+                                <li>&bull; Построение системы развития сотрудников</li>
+                                <li>&bull; Построение системы эффективного менеджмента</li>
+                                <li>&bull; Организация инновационной и проектной деятельности</li>
+                                <li>&bull; Построение системы менеджмента качества</li>
+                                <li>&bull; Автоматизация бизнес-процессов</li>
+                            </ul>
+                            <SlideNextButton/>
+                        </div>
+                    </div>
                 </SwiperSlide>
             </Swiper>
         </section>

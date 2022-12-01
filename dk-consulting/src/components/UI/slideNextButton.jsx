@@ -1,7 +1,7 @@
 import  React  from 'react';
 import { useSwiper } from 'swiper/react';
 
-export default function SlideNextButton() {
+export const SlideNextButton = () => {
   const swiper = useSwiper();
   return (
       <button onClick={() => swiper.slideNext()} className="absolute z-[6] right-0 top-[calc(50%-118px)] sm:top-[calc(50%-51px)] xs:top-[calc(50%-51px)]">

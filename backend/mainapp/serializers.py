@@ -12,8 +12,10 @@ class CustomerModelSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         customer = Customer.objects.create(**validated_data)
         send_mail(
-            'Новый запрос с сайта под номером {} получен'.format(customer.pk),
-            'Содержание запроса: {}'.format(validated_data),
+            'Новый запрос с сайта id:{} получен'.format(
+                customer.pk),
+            'Содержание запроса:\n Email: {},\n Имя: {},\n Контактный тел:{},\n Текст запроса:{}' .format(
+                customer.email, customer.customer_name, customer.phone_number, customer.comment),
             'ya.mikechirkov@yandex.ru',
             ['ya.mikechirkov@yandex.ru', ],
             fail_silently=False,

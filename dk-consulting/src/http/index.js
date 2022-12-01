@@ -6,13 +6,6 @@ const http = axios.create({
     baseURL: BASE_URL
 });
 
-http.interceptors.request.use((config) => {
-    const accessToken = localStorage.getItem("jwt");
-    config.headers = {
-        ...config.headers,
-        Authorization: `Bearer ${accessToken}`
-    };
-    return config;
-});
+
 
 export default http;

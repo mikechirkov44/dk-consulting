@@ -12,10 +12,20 @@ from .serializers import (CustomerModelSerializer, MaterialModelSerializer,
 
 
 class CustomerModelViewSet(ModelViewSet):
-    permission_classes = [IsAdminUser]
+
     queryset = Customer.objects.all()
     serializer_class = CustomerModelSerializer
     filterset_class = CustomerModelFilter
+
+    def get_permissions(self):
+        """
+            Instantiates and returns the list of permissions that this view requires.
+        """
+        if self.request.method == "POST":
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
 
 
 class MaterialModelViewSet(ModelViewSet):
