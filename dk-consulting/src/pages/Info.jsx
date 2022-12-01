@@ -25,7 +25,7 @@ export const Info = () => {
                 ? <Header />
                 : <HeaderBurger/>
             }
-            <main className="mt-[70px] lg:mt-[87px] md:mt-[87px] sm:mt-[64px] xs:mt-[64px]">
+            <main className="mt-[70px] min-h-[calc(100vh-185px)] lg:mt-[87px] md:mt-[87px] sm:mt-[64px] xs:mt-[64px]">
                 <InfoPromo />
                 <InfoMaterials/>
             </main>

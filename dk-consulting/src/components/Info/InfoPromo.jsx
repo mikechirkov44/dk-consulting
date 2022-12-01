@@ -2,11 +2,30 @@ import {NavLink} from "react-router-dom";
 import Button from "../UI/Button";
 import Register from "../UI/Register";
 import Login from "../UI/Login";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export const InfoPromo = () => {
     const [loginVisible, setLoginVisible] = useState(false);
     const [regVisible, setRegVisible] = useState(false);
+    const [account, setAccount] = useState(false);
+    const [email, setEmail] = useState("");
+
+    useEffect(()=>{
+        const jwt = localStorage.getItem('jwt');
+      if (jwt) {
+        setAccount(true);
+        const localEmail = localStorage.getItem("email");
+        setEmail(localEmail);
+      } else {
+        console.log("net tokena");
+      }
+    }, [account])
+
+    const logout = () => {
+        localStorage.clear();
+        setAccount(false);
+    }
+
     return (
         <div className="h-[910px] lg:h-[685px] sm:h-[256px] xs:h-[328px] bg-no-repeat bg-bottom bg-infopromo bg-cover xs:bg-top">
             <div className="bg-gradient-to-r from-[#090A20] via-[#06082BE8] to-[#07093E14] h-full xs:bg-gradient-to-t xs:from-[#090A20] xs:to-[#07093E14]">
@@ -18,15 +37,22 @@ export const InfoPromo = () => {
                                 <Button bluebtn={false} buttonText="начать сотрудничество"/>
                             </NavLink>
                             <div className='mt-[50px] text-lightgrey font-extralight text-[16px] leading-[22px] lg:mt-[50px] md:mt-[50px] sm:text-[10px] sm:leading-[12px] sm:mt-[15px] xs:absolute xs:top-[-130px] xs:text-[10px] xs:leading-[12px] xs:left-[calc(50%-63px)] xs:mt-0'>
-                                <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setRegVisible(true)}}>Регистрация / </button>
-                                <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button>
+                               {account ?  <div>
+                                                <p className="hover:text-blue inline sm:text-[10px] xs:text-[10px]">{email} </p>
+                                                <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={logout}>/ Выйти</button>
+                                            </div> 
+                                        :  <div>
+                                                <button className="hover:text-blue sm:text-[10px] xs:text-[10px]" onClick={() => {setRegVisible(true)}}>Регистрация / </button>
+                                                <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button>
+                                            </div>
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <Register isVisible={regVisible} setVisible={setRegVisible}/>
-            <Login isVisible={loginVisible} setVisible={setLoginVisible}/>
+            <Register isVisible={regVisible} setVisible={setRegVisible} setLoginVisible={setLoginVisible}/>
+            <Login isVisible={loginVisible} setVisible={setLoginVisible} setAccount={setAccount} regVisible={setRegVisible}/>
         </div>
     )
 }

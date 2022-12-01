@@ -1,16 +1,34 @@
 import Button from "../UI/Button";
 import {NavLink} from "react-router-dom";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import Register from "../UI/Register";
 import Login from "../UI/Login";
 import CountUp from 'react-countup';
-import { Link } from "react-scroll";
 
 
 export default function MainPromo() {
 
     const [loginVisible, setLoginVisible] = useState(false);
     const [regVisible, setRegVisible] = useState(false);
+    const [account, setAccount] = useState(false);
+    const [email, setEmail] = useState("");
+
+
+    useEffect(()=>{
+        const jwt = localStorage.getItem('jwt');
+      if (jwt) {
+        setAccount(true);
+        const localEmail = localStorage.getItem("email");
+        setEmail(localEmail);
+      } else {
+        console.log("net tokena");
+      }
+    }, [account])
+
+    const logout = () => {
+        localStorage.clear();
+        setAccount(false);
+    }
 
     const buttonText = "Оставить заявку";
 
@@ -19,8 +37,14 @@ export default function MainPromo() {
             <div className="hidden md:block sm:block xs:block bg-gradient-to-t from-[#030B29] via-[#02114596] to-[#020B2800] absolute top-0 z-2 w-full h-full"></div>
             <div className="max-w-[1290px] mx-auto flex flex-col items-center py-[75px] relative lg:max-w-[944px] lg:pt-[40px] md:max-w-[690px] sm:max-w-[420px] sm:pt-[82px] sm:pb-[30px] xs:max-w-[290px] xs:pt-[122px] xs:pb-[30px]">
                 <div className="flex absolute text-white font-extralight text-[16px] leading-[22px] top-[16px] right-[0]">
+                    {
+                    account ?  <div>
+                        <p className="hover:text-blue inline sm:text-[10px] xs:text-[10px]">{email} </p>
+                        <button className="hover:text-blue sm:text-[10px] xs:text-[10px]" onClick={logout}>/ Выйти</button>
+                    </div> :  <div>
                     <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setRegVisible(true)}}>Регистрация / </button>
-                    <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button>
+                    <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button></div>
+                    }
                 </div>
                 <h2 className="max-w-[653px] text-center text-white bigTitle lg:text-[36px] lg:leading-[50px] md:mb-[70px] sm:mb-[47px] sm:text-[20px] sm:leading-[32px] sm:font-light xs:mb-[47px] xs:text-[20px] xs:leading-[32px] xs:font-light">Комплексный консалтинг производственных компаний</h2>
                     <div className="flex justify-between items-center w-full mb-[75px] lg:max-w-[944px] lg:mb-[18px] md:max-w-[690px] sm:hidden xs:hidden">
@@ -83,8 +107,8 @@ export default function MainPromo() {
                 </NavLink>
                 
             </div>
-            <Register isVisible={regVisible} setVisible={setRegVisible}/>
-            <Login isVisible={loginVisible} setVisible={setLoginVisible}/>
+            <Register isVisible={regVisible} setVisible={setRegVisible} setLoginVisible={setLoginVisible}/>
+            <Login isVisible={loginVisible} setVisible={setLoginVisible} setAccount={setAccount} regVisible={setRegVisible}/>
         </section>
     )
 }
