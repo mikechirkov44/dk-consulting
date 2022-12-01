@@ -44,6 +44,7 @@ router.register("materials", MaterialModelViewSet)
 
 
 urlpatterns = [
+    path('grappelli/', include('grappelli.urls')),  # grappelli URLS
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls')),
@@ -56,4 +57,5 @@ urlpatterns = [
          cache_timeout=0), name='schema-redoc'),
     path('api/password_reset/',
          include('django_rest_passwordreset.urls', namespace='password_reset')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

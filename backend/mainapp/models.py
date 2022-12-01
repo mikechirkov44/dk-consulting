@@ -71,6 +71,7 @@ class Material(models.Model):
     class Meta:
         verbose_name = "Полезный материал"
         verbose_name_plural = "Полезные материалы"
+        ordering = ['-pk', ]
 
     def __str__(self) -> str:
         return self.title
