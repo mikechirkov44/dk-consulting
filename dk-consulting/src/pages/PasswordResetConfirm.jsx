@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate } from "react-router";
 import authService from "../services/authService";
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import Header from "../components/Header&Footer/Header";
 import Footer from "../components/Header&Footer/Footer";
@@ -59,6 +60,10 @@ const PasswordResetConfirm = () => {
 
   return (
     <div>
+            <Helmet>
+                <title>Создание пароля | DK-CONSULTING</title>
+                <meta name="description" content="Страница создания нового пароля" />
+            </Helmet>
     {defaultPageWidth > bp
         ? <Header />
         : <HeaderBurger/>

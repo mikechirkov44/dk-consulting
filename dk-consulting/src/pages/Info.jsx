@@ -5,6 +5,7 @@ import Header from "../components/Header&Footer/Header";
 import Footer from "../components/Header&Footer/Footer";
 import { HeaderBurger } from "../components/Header&Footer/HeaderBurger";
 import { InfoMaterials } from "../components/Info/InfoMaterials";
+import { Helmet } from "react-helmet";
 
 
 export const Info = () => {
@@ -21,6 +22,10 @@ export const Info = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Полезные материалы | DK-CONSULTING</title>
+                <meta name="description" content="Полезные материалы компании" />
+            </Helmet>
             {defaultPageWidth > bp
                 ? <Header />
                 : <HeaderBurger/>

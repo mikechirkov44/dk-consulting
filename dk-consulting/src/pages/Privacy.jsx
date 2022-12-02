@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import Header from "../components/Header&Footer/Header";
 import Footer from "../components/Header&Footer/Footer";
@@ -19,6 +20,10 @@ export const Privacy = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Политика конфиденциальности | DK-CONSULTING</title>
+                <meta name="description" content="Политика конфиденциальности и сбора данных компании" />
+            </Helmet>
             {defaultPageWidth > bp
                 ? <Header />
                 : <HeaderBurger/>

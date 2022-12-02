@@ -1,5 +1,6 @@
 import React from "react";
 
+import {Helmet} from "react-helmet";
 import { ServiceItem1} from "../components/Services/ServiceItem1"
 import { ServiceItem2 } from "../components/Services/ServiceItem2"
 import { ServiceItem3 } from "../components/Services/ServiceItem3"
@@ -52,6 +53,10 @@ export const Services = () => {
 
     return ( 
         <div className="oveflow-hidden">
+            <Helmet>
+                <title>Услуги | DK-CONSULTING</title>
+                <meta name="description" content="Услуги компании" />
+            </Helmet>
             {defaultPageWidth > bp
                 ? <Header />
                 : <HeaderBurger/>

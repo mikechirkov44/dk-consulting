@@ -61,8 +61,7 @@ export const InfoMaterials = () => {
     return (
         <section> 
             
-            {
-                isLoading ? <p>Загрузка</p> : <ul className="py-[52px] max-w-[1290px] mx-auto relative lg:max-w-[940px] lg:py-[60px] md:max-w-[690px] sm:max-w-[420px] sm:py-[20px] xs:max-w-[290px] xs:py-5">
+            {isLoading ? <p>Загрузка</p> : <ul className="py-[52px] max-w-[1290px] mx-auto relative lg:max-w-[940px] lg:py-[60px] md:max-w-[690px] sm:max-w-[420px] sm:py-[20px] xs:max-w-[290px] xs:py-5">
                 {loggedIn === false
                     ? <li>
                         <h1 className="par text-center lg:text-lg md:text-lg sm:text-sm xs:text-xs">Вам необходимо зарегистрироваться или авторизироваться, чтобы увидеть пользовательские материалы</h1>

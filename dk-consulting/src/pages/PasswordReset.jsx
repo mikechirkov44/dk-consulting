@@ -3,6 +3,7 @@ import authService from "../services/authService";
 import {useNavigate} from "react-router";
 
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import Header from "../components/Header&Footer/Header";
 import Footer from "../components/Header&Footer/Footer";
@@ -58,6 +59,10 @@ const PasswordReset = () => {
 
   return (
     <div>
+            <Helmet>
+                <title>Сброс пароля | DK-CONSULTING</title>
+                <meta name="description" content="Страница сброса пароля" />
+            </Helmet>
     {defaultPageWidth > bp
         ? <Header />
         : <HeaderBurger/>

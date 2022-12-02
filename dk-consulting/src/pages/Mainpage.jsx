@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Helmet} from "react-helmet";
 import { NavLink } from "react-router-dom";
 import { Link, animateScroll as scroll } from "react-scroll";
 import MainPromo from "../components/Main/MainPromo";
@@ -62,6 +63,10 @@ export const MainPage = () => {
     
     return (
      <>
+        <Helmet>
+            <title>Главная | DK-CONSULTING</title>
+            <meta name="description" content="Главная страница компании" />
+        </Helmet>
         {defaultPageWidth > bp
           ? <Header />
           : <HeaderBurger/>
