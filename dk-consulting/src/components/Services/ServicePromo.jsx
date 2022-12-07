@@ -33,40 +33,20 @@ export const ServicePromo = () => {
     <div className="h-[910px] lg:h-[685px] sm:h-[256px] xs:h-[328px] bg-no-repeat bg-bottom bg-servicepromo bg-cover relative">
       <div className="hidden sm:block xs:block bg-gradient-to-b from-[#030B29] via-[#02114596] to-[#020B2800] absolute top-0 z-2 w-full h-full"></div>
       <div className="bg-gradient-to-r from-[#090A20] via-[#06082BE8] to-[#07093E14] h-full relative sm:bg-transparent xs:bg-transparent">
-        <div className="flex absolute text-white font-extralight text-[16px] leading-[22px] top-[16px] right-[100px] sm:text-[10px] sm:leading-[12px]  xs:text-[10px] xs:leading-[12px] xs:right-[calc(50%-61px)] ">
-          {account ? (
-            <div className="flex items-center">
-              <p className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]">
-                {email}&nbsp;
-              </p>
-              <button
-                className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]"
-                onClick={logout}
-              >
-                / Выйти
-              </button>
-            </div>
-          ) : (
-            <div>
-              <button
-                className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]"
-                onClick={() => {
-                  setRegVisible(true);
-                }}
-              >
-                Регистрация /{" "}
-              </button>
-              <button
-                className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]"
-                onClick={() => {
-                  setLoginVisible(true);
-                }}
-              >
-                Авторизация
-              </button>
-            </div>
-          )}
-        </div>
+                <div className="w-full absolute h-8 sm:h-5 xs:h-5">
+                    <div className="max-w-[1290px] h-full w-full flex justify-end items-end mx-auto  lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] sm:justify-end xs:justify-center xs:max-w-[290px]">
+                        <div className="flex z-10 text-white font-extralight text-[16px] leading-[22px] sm:text-[10px] sm:leading-[12px] sm:right-[60px] xs:text-[10px] xs:leading-[12px] xs:right-[calc(50%-61px)] ">
+                          {
+                            account ?  <div>
+                                <p className="hover:opacity-100 duration-500 opacity-60 inline sm:text-[10px] xs:text-[10px]">{email} </p>&nbsp;/&nbsp;
+                                <button className="hover:opacity-100 duration-500 opacity-60 sm:text-[10px] xs:text-[10px]" onClick={logout}> Выйти</button>
+                            </div> :  <div>
+                            <button className="hover:opacity-100 duration-500 opacity-60 sm:text-[10px] xs:text-[10px]" onClick={() => {setRegVisible(true)}}>Регистрация </button>&nbsp;/&nbsp;
+                            <button className="hover:opacity-100 duration-500 opacity-60 sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button></div>
+                          }
+                        </div>
+                    </div>
+                </div>
         <div className="w-[calc(50%-90px)] bg-[#090A20] h-full relative lg:w-[calc(50%-20px)]  md:w-[calc(50%+45px)] sm:bg-transparent  xs:bg-transparent sm:max-w-[370px] sm:w-full sm:mx-auto xs:max-w-[290px] xs:w-full xs:mx-auto">
           <div className="absolute top-[203px] right-[65px] lg:top-[112px]  md:top-[152px] sm:top-[50px] sm:right-0 sm:w-full xs:top-[40px] xs:right-0 xs:w-full">
             <div className="max-w-[485px] flex flex-col items-center lg:max-w-[276px] md:max-w-[276px]  sm:max-w-[370px] sm:w-full sm:mx-auto xs:max-w-[290px] xs:w-full xs:mx-auto">

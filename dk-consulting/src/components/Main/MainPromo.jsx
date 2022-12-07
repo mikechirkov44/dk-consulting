@@ -34,18 +34,22 @@ export default function MainPromo() {
 
     return (
         <section className="bg-mainpromo h-[910px] lg:h-[685px] sm:h-[256px] bg-center w-full bg-cover relative xs:h-[328px]">
+                <div className="w-full absolute h-8 sm:h-5 xs:h-5">
+                    <div className="max-w-[1290px] h-full w-full flex justify-end items-end mx-auto  lg:max-w-[940px] md:max-w-[690px] sm:max-w-[420px] sm:justify-end xs:justify-center xs:max-w-[290px]">
+                        <div className="flex z-10 text-white font-extralight text-[16px] leading-[22px] sm:text-[10px] sm:leading-[12px] sm:right-[60px] xs:text-[10px] xs:leading-[12px] xs:right-[calc(50%-61px)] ">
+                            {
+                            account ?  <div>
+                                <p className="hover:opacity-100 duration-500 opacity-60 inline sm:text-[10px] xs:text-[10px]">{email} </p>&nbsp;/&nbsp;
+                                <button className="hover:opacity-100 duration-500 opacity-60 sm:text-[10px] xs:text-[10px]" onClick={logout}> Выйти</button>
+                            </div> :  <div>
+                            <button className="hover:opacity-100 duration-500 opacity-60 sm:text-[10px] xs:text-[10px]" onClick={() => {setRegVisible(true)}}>Регистрация </button>&nbsp;/&nbsp;
+                            <button className="hover:opacity-100 duration-500 opacity-60 sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button></div>
+                            }
+                        </div>
+                    </div>
+                </div>
             <div className="hidden md:block sm:block xs:block bg-gradient-to-t from-[#030B29] via-[#02114596] to-[#020B2800] absolute top-0 z-2 w-full h-full"></div>
             <div className="max-w-[1290px] mx-auto flex flex-col items-center py-[75px] relative lg:max-w-[944px] lg:pt-[40px] md:max-w-[690px] sm:max-w-[420px] sm:pt-[82px] sm:pb-[30px] xs:max-w-[290px] xs:pt-[122px] xs:pb-[30px]">
-                <div className="flex absolute text-white font-extralight text-[16px] leading-[22px] top-[16px] right-[0]">
-                    {
-                    account ?  <div>
-                        <p className="hover:text-blue inline sm:text-[10px] xs:text-[10px]">{email} </p>
-                        <button className="hover:text-blue sm:text-[10px] xs:text-[10px]" onClick={logout}>/ Выйти</button>
-                    </div> :  <div>
-                    <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setRegVisible(true)}}>Регистрация / </button>
-                    <button className="hover:text-[#27699E] sm:text-[10px] xs:text-[10px]" onClick={() => {setLoginVisible(true)}}>Авторизация</button></div>
-                    }
-                </div>
                 <h2 className="max-w-[653px] text-center text-white bigTitle lg:text-[36px] lg:leading-[50px] md:mb-[70px] sm:mb-[47px] sm:text-[20px] sm:leading-[32px] sm:font-light xs:mb-[47px] xs:text-[20px] xs:leading-[32px] xs:font-light">Комплексный консалтинг производственных компаний</h2>
                     <div className="flex justify-between items-center w-full mb-[75px] lg:max-w-[944px] lg:mb-[18px] md:max-w-[690px] sm:hidden xs:hidden">
                         <div className="flex flex-col items-start justify-between">

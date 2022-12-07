@@ -7,7 +7,7 @@ export default function MainServices() {
             <h2 className="bigTitle text-grey text-center mb-[27px] lg:text-[36px] lg:leading-[50px] md:text-[36px] md:leading-[50px]">Узнайте больше о наших услугах</h2>
             <ul className="flex items-start justify-between w-full lg:justify-center lg:flex-wrap md:justify-center md:flex-wrap">
                 <li className="flex flex-col items-center w-full group lg:flex-col-reverse lg:w-[310px] lg:mr-[80px] md:flex-col-reverse md:w-[310px] md:mr-[20px]">
-                    <NavLink to="/services/audit" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue  group-hover:text-white ease-in-out duration-300 lg:w-[223px] lg:py-[14px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[14px] md:h-[60px] md:mt-[20px]">АУДИТ</NavLink>
+                    <NavLink to="/services/audit" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue  group-hover:text-white ease-in-out duration-500 lg:w-[223px] lg:py-[14px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[14px] md:h-[60px] md:mt-[20px]">АУДИТ</NavLink>
                     <ul className="flex flex-col items-center text-grey w-[305.5px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300 rounded-[8px] relative">
                         <li className="text-[18px] leading-[32px] font-light">Диагностика состояния</li>
                         <li className="text-[18px] leading-[32px] font-light"> Аудит процессов</li>
@@ -18,7 +18,7 @@ export default function MainServices() {
                     </ul>
                 </li>
                 <li className="flex flex-col items-center w-full group  lg:flex-col-reverse lg:w-[310px] lg:ml-[80px] md:flex-col-reverse md:w-[310px] md:ml-[20px]">
-                    <NavLink to="/services/consult" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300  lg:w-[223px] lg:py-[4px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[4px] md:h-[60px] md:mt-[20px]">ПРОМЫШЛЕННЫЙ КОНСАЛТИНГ</NavLink>
+                    <NavLink to="/services/consult" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue group-hover:text-white ease-in-out duration-500  lg:w-[223px] lg:py-[4px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[4px] md:h-[60px] md:mt-[20px]">ПРОМЫШЛЕННЫЙ КОНСАЛТИНГ</NavLink>
                     <ul className="flex flex-col items-center w-[305.5px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300  rounded-[8px] relative">
                         <li className="text-[18px] leading-[32px] font-light">Стратегия развития</li>
                         <li className="text-[18px] leading-[32px] font-light"> Оптимизация процессов</li>
@@ -29,7 +29,7 @@ export default function MainServices() {
                     </ul>
                 </li>
                 <li className="flex flex-col items-center w-full group  lg:flex-col-reverse lg:w-[310px] lg:mr-[80px] md:flex-col-reverse md:w-[310px] md:mr-[20px]">
-                    <NavLink to="/services/organize" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300  lg:w-[223px] lg:py-[4px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[4px] md:h-[60px] md:mt-[20px]">ОРГАНИЗАЦИЯ ПРОИЗВОДСТВА</NavLink>
+                    <NavLink to="/services/organize" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue group-hover:text-white ease-in-out duration-500  lg:w-[223px] lg:py-[4px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[4px] md:h-[60px] md:mt-[20px]">ОРГАНИЗАЦИЯ ПРОИЗВОДСТВА</NavLink>
                     <ul className="flex flex-col items-center w-[305.5px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300  rounded-[8px] relative">
                         <li className="text-[18px] leading-[32px] font-light">Разработка технологии</li>
                         <li className="text-[18px] leading-[32px] font-light"> Подбор оборудования</li>
@@ -40,7 +40,7 @@ export default function MainServices() {
                     </ul>
                 </li>
                 <li className="flex flex-col items-center w-full group  lg:flex-col-reverse lg:w-[310px] lg:ml-[80px] md:flex-col-reverse md:w-[310px] md:ml-[20px]">
-                    <NavLink to="/services/teach" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300  lg:w-[223px] lg:py-[14px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[14px] md:h-[60px] md:mt-[20px]">ОБУЧЕНИЕ</NavLink>
+                    <NavLink to="/services/teach" className="text-[16px] text-grey w-[305.5px] border-2 border-grey rounded-[8px] text-center py-[22px] mb-[62px] group-hover:bg-blue group-hover:text-white ease-in-out duration-500  lg:w-[223px] lg:py-[14px] lg:h-[60px] lg:mt-[20px] md:w-[223px] md:py-[14px] md:h-[60px] md:mt-[20px]">ОБУЧЕНИЕ</NavLink>
                     <ul className="flex flex-col items-center w-[305.5px] group-hover:bg-blue group-hover:text-white ease-in-out duration-300 rounded-[8px]">
                         <li className="text-[18px] leading-[32px] font-light">Методы эффективности</li>
                         <li className="text-[18px] leading-[32px] font-light">Операционное управление</li>

@@ -8,10 +8,10 @@ body {
 
 @layer components {
     .bluebtn {
-      @apply text-white uppercase w-[307px] rounded-[8px] text-[16px] py-[22px] border-0 bg-blue hover:bg-darkblue active:bg-darkblue;
+      @apply text-white uppercase w-[307px] rounded-[8px] text-[16px] py-[22px] border-0 bg-blue duration-300 hover:bg-darkblue active:bg-darkblue;
     }
     .transbtn {
-      @apply text-white uppercase w-[303px] rounded-[8px] text-[16px] py-[21px] border-2 border-lightgrey border-solid bg-[#D9D9D90A] backdrop-blur hover:bg-blue hover:border-blue active:bg-darkblue active:border-darkblue;
+      @apply text-white uppercase w-[303px] rounded-[8px] text-[16px] py-[21px] border-2 border-lightgrey border-solid bg-[#D9D9D90A] backdrop-blur duration-300 hover:bg-blue hover:border-blue active:bg-darkblue active:border-darkblue;
     }
     .bigTitle {
       @apply uppercase text-[40px] font-extralight leading-[56px];
