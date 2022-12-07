@@ -1,5 +1,6 @@
 import React from "react";
 
+import {Helmet} from "react-helmet";
 import { ServiceItem1} from "../components/Services/ServiceItem1"
 import { ServiceItem2 } from "../components/Services/ServiceItem2"
 import { ServiceItem3 } from "../components/Services/ServiceItem3"
@@ -52,6 +53,10 @@ export const Services = () => {
 
     return ( 
         <div className="oveflow-hidden">
+            <Helmet>
+                <title>Услуги | DK-CONSULTING</title>
+                <meta name="description" content="Услуги компании" />
+            </Helmet>
             {defaultPageWidth > bp
                 ? <Header />
                 : <HeaderBurger/>
@@ -62,7 +67,7 @@ export const Services = () => {
                 <ServiceItem2 ref={services.consult}/>
                 <ServiceItem3 ref={services.organize}/>
                 <ServiceItem4 ref={services.teach}/>
-                <Link to="" onClick={scrollToTop} smooth={true} className="fixed bottom-4 right-4 z-[300] group">
+                <button onClick={scrollToTop} className="fixed bottom-4 right-4 z-[300] group">
                 <svg className=" lg:w-[50px] md:w-10 sm:w-[30px] xs:w-[30px]" width="60" height="100" viewBox="0 0 60 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g opacity="0.5">
                     <rect className="group-hover:stroke-sky-700" x="1" y="99" width="58" height="58" rx="29" transform="rotate(-90 1 99)" stroke="#40454E" strokeWidth="2"/>
@@ -71,7 +76,7 @@ export const Services = () => {
                     <line className="group-hover:stroke-sky-700" x1="1" y1="-1" x2="17.0377" y2="-1" transform="matrix(0.512439 -0.858724 0.955154 0.296109 22.1528 16.4355)" stroke="#40454E" strokeWidth="2" strokeLinecap="round"/>
                     <line className="group-hover:stroke-sky-700" x1="1" y1="-1" x2="17.0377" y2="-1" transform="matrix(-0.512439 -0.858724 -0.955154 0.296109 38.4497 16.4355)" stroke="#40454E" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
-            </Link>
+            </button>
             </main>
             <Footer />
         </div>

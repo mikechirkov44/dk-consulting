@@ -50,7 +50,7 @@ export const AboutDiplomas = () => {
                     <img src={diplom3} alt="diplom3" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="h-[350px] w-full mx-auto sm:h-[220px] xs:h-[168px]">
+                    <div className="h-[410px] w-full mx-auto lg:h-[290px] sm:h-[240px] xs:h-[168px]">
                         <img src={diplom4} alt="diplom4" className="h-full mx-auto"/>
                     </div>
                 </SwiperSlide>
