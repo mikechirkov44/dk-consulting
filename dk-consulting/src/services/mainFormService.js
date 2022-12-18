@@ -5,8 +5,8 @@ const BASE_URL = "http://31.31.192.57:8000"
 const jwt = localStorage.getItem("jwt")
 
 const mainForm = axios.create({
-    baseURL: BASE_URL,
-    headers: {'Authorization' : `Token ${jwt}` }
+  baseURL: BASE_URL,
+  headers: { 'Authorization': `Token ${jwt}` }
 
 });
 

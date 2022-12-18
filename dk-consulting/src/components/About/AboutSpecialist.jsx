@@ -6,7 +6,7 @@ export const AboutSpecialist = () => {
             <h1 className="bigTitle text-black lg:text-4xl md:text-4xl sm:text-xl xs:text-xl">Ведущий специалист</h1>
             <div className="w-full h-[1px] bg-blue my-[10px]"></div>
             <div className="bg-gradient-to-t from-[#232B30] via-[#303C43] to-[#37444C] h-full flex items-center justify-between mt-[15px]">
-                <img src={specialist} className="md:w-[300px] sm:w-[200px] xs:w-[130px]" alt="denis kapitonenko"/>
+                <img src={specialist} className="md:w-[300px] sm:w-[200px] xs:w-[130px]" alt="Денис Капитоненко" />
                 <div className="px-[35px] border-l-2 border-solid border-blue">
                     <h4 className="littleTitle text-blue lg:text-xl md:text-xl sm:text-lg sm:text-white sm:text-center xs:text-base xs:text-white xs:text-center">Капитоненко Денис</h4>
                     <h4 className="littleTitle text-blue mb-[10px] lg:text-xl md:text-xl sm:text-lg sm:text-center xs:text-base xs:text-center">CEO</h4>

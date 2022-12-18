@@ -24,6 +24,7 @@ from rest_framework.authtoken import views
 from mainapp.views import MaterialModelViewSet, CustomerModelViewSet, RegistrUserView
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -57,5 +58,6 @@ urlpatterns = [
          cache_timeout=0), name='schema-redoc'),
     path('api/password_reset/',
          include('django_rest_passwordreset.urls', namespace='password_reset')),
+    path('', TemplateView.as_view(template_name='index.html')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
