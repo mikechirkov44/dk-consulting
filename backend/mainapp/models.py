@@ -32,9 +32,9 @@ class Customer(BaseModel):
         ("OTHER", "ДРУГОЙ ИСТОЧНИК"),
     )
     request_type = models.CharField(
-        unique=False, max_length=64, verbose_name="Тип запроса", choices=CHOICE_REQUEST_TYPE)
+        unique=False, max_length=64, verbose_name="Тип запроса", choices=CHOICE_REQUEST_TYPE, blank=True)
     channel_type = models.CharField(
-        unique=False, max_length=64, verbose_name="Источник информации", choices=CHOICE_SOURCE)
+        unique=False, max_length=64, verbose_name="Источник информации", choices=CHOICE_SOURCE, blank=True)
     # Customer name
     customer_name = models.CharField(max_length=128, verbose_name="ФИО")
 
@@ -66,7 +66,7 @@ class Material(models.Model):
     for_clients = models.BooleanField(
         default=False, verbose_name="Только для клиентов")
     file_name = models.FileField(
-        upload_to='uploads/', verbose_name="Файл pdf")
+        upload_to='uploads/', verbose_name="Файл pdf или архив")
 
     class Meta:
         verbose_name = "Полезный материал"
@@ -119,8 +119,8 @@ class MyUserManager(BaseUserManager):
 # Создаём класс User
 class User(AbstractBaseUser, PermissionsMixin):
     id = models.AutoField(primary_key=True, unique=True)  # Идентификатор
-    username = models.CharField(
-        max_length=50, unique=True, verbose_name="Имя пользователя")  # Логин
+    username = models.EmailField(
+        unique=True, null=True, verbose_name="Имя пользователя")  # Логин
     email = models.EmailField(max_length=100, unique=True)  # Email
     is_active = models.BooleanField(
         default=True, verbose_name="АКТИВНЫЙ")  # Статус активации
@@ -130,8 +130,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_client = models.BooleanField(
         default=False, verbose_name="СТАТУС КЛИЕНТА")
 
-    USERNAME_FIELD = 'email'  # Идентификатор для обращения
-    # REQUIRED_FIELDS = ['username']  # Список имён полей для Superuser
+    USERNAME_FIELD = 'username'  # Идентификатор для обращения
+    EMAIL_FIELD = 'username'
+    REQUIRED_FIELDS = ['email']  # Список имён полей для Superuser
 
     objects = MyUserManager()  # Добавляем методы класса MyUserManager
 
@@ -147,7 +148,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 @receiver(reset_password_token_created)
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
 
-    reset_password_url = "Для сброса пароля перейдите по следующей ссылке: http://localhost:3000{}{}{}".format(
+    reset_password_url = "Для сброса пароля перейдите по следующей ссылке: http://www.dk-consult.ru:80{}{}{}".format(
         reverse('password_reset:reset-password-request'), ('confirm/'), reset_password_token.key)
 
     send_mail(
@@ -156,7 +157,7 @@ def password_reset_token_created(sender, instance, reset_password_token, *args, 
         # message:
         reset_password_url,
         # from:
-        "ya.mikechirkov@yandex.ru",
+        "admin@dk-consult.ru",
         # to:
         [reset_password_token.user.email]
 
