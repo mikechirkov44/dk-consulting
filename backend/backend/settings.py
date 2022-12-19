@@ -112,7 +112,6 @@ else:
         }
     }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -167,11 +166,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost',
+    'http://localhost:80',
+    'http://dk-consult.ru',
+    'https://dk-consult.ru',
+    'http://www.dk-consult.ru',
+    'https://www.dk-consult.ru',
+]
 
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:3000",
-# ]
+CSRF_TRUSTED_ORIGINS = CORS_ORIGIN_WHITELIST
+CORS_ALLOWED_ORIGINS = CORS_ORIGIN_WHITELIST
+
+CORS_ALLOW_HEADERS = (
+    '*',
+    'Access-Control-Allow-Origin',
+    'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Credentials',
+)
+
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
