@@ -12,7 +12,6 @@ from .serializers import (CustomerModelSerializer, MaterialModelSerializer,
 
 
 class CustomerModelViewSet(ModelViewSet):
-
     queryset = Customer.objects.all()
     serializer_class = CustomerModelSerializer
     filterset_class = CustomerModelFilter

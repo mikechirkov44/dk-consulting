@@ -157,9 +157,9 @@ export default function Register(props) {
                                 >
                                     <div className="flex flex-col w-full items-center max-w-[710px] py-4 space-y-4 lg:max-w-[515px] md:max-w-[515px] sm:max-w-[320px]">
                                         <input
-                                            type="name"
+                                            type="email"
                                             id="name"
-                                            placeholder="Ваше имя"
+                                            placeholder="Ваш логин (E-mail)"
                                             value={name || ""}
                                             onChange={handleNicknameChange}
                                             className="w-[100%] bg-[#0A0B22] border-b-[1px] text-white font-light text-[22px] leading-[16px] p-3 lg:text-lg md:text-lg sm:text-base xs:text-base"

@@ -16,8 +16,8 @@ class CustomerModelSerializer(serializers.ModelSerializer):
                 customer.pk),
             'Содержание запроса:\n Email: {},\n Имя: {},\n Контактный тел:{},\n Текст запроса:{}' .format(
                 customer.email, customer.customer_name, customer.phone_number, customer.comment),
-            'admin@dk-consult.ru',
-            ['info@dk-consult.ru', ],
+            'dk.prom.consult@yandex.ru',
+            ['info@dk-consult.ru', 'denkapitonenko@mail.ru'],
             fail_silently=False,
         )
         return customer
@@ -71,7 +71,7 @@ class UserRegistrSerializer(serializers.ModelSerializer):
             'Регистрация на сайте dk-consulting.ru',
             'Вы успешно зарегистрировались на сайте, имя пользователя: {}, email: {}'.format(
                 user.username, user.email),
-            'admin@dk-consult.ru',
+            'dk.prom.consult@yandex.ru',
             [{user.email}, ],
             fail_silently=False,
         )

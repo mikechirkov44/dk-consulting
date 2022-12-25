@@ -62,7 +62,7 @@ class Customer(BaseModel):
 class Material(models.Model):
     title = models.CharField(max_length=64, verbose_name="Имя файла")
     description = models.CharField(
-        max_length=128, verbose_name="Описание файла")
+        max_length=1024, verbose_name="Описание файла")
     for_clients = models.BooleanField(
         default=False, verbose_name="Только для клиентов")
     file_name = models.FileField(

@@ -151,12 +151,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if DEBUG:
-    STATICFILES_DIRS = [
-        BASE_DIR / '..' / 'dk-consulting' / 'build' / 'static',
-    ]
-else:
-    STATIC_ROOT = BASE_DIR / '..' / 'dk-consulting' / 'build' / 'static',
+# if DEBUG:
+#     STATICFILES_DIRS = [
+#         BASE_DIR / '..' / 'dk-consulting' / 'build' / 'static',
+#     ]
+# else:
+#     STATIC_ROOT = BASE_DIR / '..' / 'dk-consulting' / 'build' / 'static',
+
+STATIC_ROOT = BASE_DIR / '..' / 'nginx' / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -166,7 +168,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost',
@@ -175,6 +178,8 @@ CORS_ORIGIN_WHITELIST = [
     'https://dk-consult.ru',
     'http://www.dk-consult.ru',
     'https://www.dk-consult.ru',
+    'http://31.31.192.57:80',
+    'https://31.31.192.57:80',
 ]
 
 CSRF_TRUSTED_ORIGINS = CORS_ORIGIN_WHITELIST
@@ -216,14 +221,12 @@ DJOSER = {
 AUTH_USER_MODEL = 'mainapp.User'
 
 # EMAIL SETTINGS FOR NOTIFICATIONS:
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.mail.ru'
-EMAIL_PORT = 2525
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = os.getenv('EMAIL_HOST_USER')
 
 
 GRAPPELLI_ADMIN_TITLE = "DK-CONSULTING ADMIN"

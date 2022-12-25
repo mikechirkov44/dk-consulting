@@ -58,7 +58,7 @@ export default function Footer() {
                         <p className="text-[14px] leading-[16px] text-white my-[10px] sm:text-[10px] sm:leading-[13px] xs:text-[10px] xs:leading-[13px]">•    Обучение</p>
                     </NavLink>
                     <p className="text-[10px] leading-[10px] text-[#C5C5C550] absolute bottom-0 right-0 text-end">Copyright &copy;&nbsp;2022&nbsp;| DK-Consulting</p>
-                    <a href="http://www.31.31.192.57:8000/admin" className="text-[10px] leading-[10px] underline text-[#C5C5C550] absolute bottom-4 lg:-bottom-4 right-0 text-end md:hidden sm:hidden xs:hidden">Вход для администратора</a>
+                    <a href="http://www.dk-consult.ru:8000/admin/" className="text-[10px] leading-[10px] underline text-[#C5C5C550] absolute bottom-4 lg:-bottom-4 right-0 text-end md:hidden sm:hidden xs:hidden">Вход для администратора</a>
                 </nav>
             </div>
         </section>
