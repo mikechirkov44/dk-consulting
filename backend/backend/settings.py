@@ -105,10 +105,7 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'dkconsult',
-            'USER': 'denis',
-            'PASSWORD': 'dk1011',
-            'HOST': 'db',
-            'PORT': '5432',
+            'USER': 'postgres',
         }
     }
 
