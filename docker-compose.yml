@@ -8,9 +8,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: 'dkconsult'
-      POSTGRES_USER: 'denis'
-      POSTGRES_PASSWORD: 'dk1011'
+      POSTGRES_DB: ''
+      POSTGRES_USER: ''
+      POSTGRES_PASSWORD: ''
 
   backend:
     build: ./backend
